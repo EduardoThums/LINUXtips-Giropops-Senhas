@@ -30,6 +30,12 @@ docker run -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/Library/Caches:
 docker run -v /var/run/docker.sock:/var/run/docker.sock -v $HOME/Library/Caches:/root/.cache/ aquasec/trivy fs .
 ```
 
+This image is also signed using Cosign, you can check that by running the following command (you must have Cosign CLI installed)
+
+```bash
+cosign verify --certificate-identity eduardocristiano01@gmail.com --certificate-oidc-issuer https://accounts.google.com  eduardothums/linuxtips-giropops-senhas:1.4
+```
+
 # Publish
 
 The image in this repository can be found published at Docker Hub [here](https://hub.docker.com/repository/docker/eduardothums/linuxtips-giropops-senhas/general).
